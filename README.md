@@ -1,1 +1,1 @@
-![example](./example.png =768x640)
+![example](./example.png)
