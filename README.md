@@ -61,7 +61,7 @@
 
 ![repo](./repo.png)
 
-Метод [http://localhost:8080/users/octocat/repos](http://localhost:8080/users/octocat) возвращает массив репозиториев, рассмотрим один элемент этого массива.
+Метод [http://localhost:8080/users/octocat/repos](http://localhost:8080/users/octocat/repos) возвращает массив репозиториев, рассмотрим один элемент этого массива.
 
 * **name** (string) - название репозитория
 * **html_url** (string) - ссылка на репозиторий на github
