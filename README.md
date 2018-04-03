@@ -1,6 +1,6 @@
 # Тестовое задание
 
-![screenshot](./images/screenshot.png)
+![screenshot](images/screenshot.png)
 1. Ставим зависимости;
 2. Запускаем dev-server (npm start или yarn start).
 3. Можем использовать любые библиотеки/фреймворки. В предложенной конфигурации: react, date-fns, less, classnames, normalize.css... (детально в package.json).
