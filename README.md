@@ -1,6 +1,7 @@
 # Тестовое задание
 
 ![screenshot](./screenshot.png)
+
 1. Ставим зависимости;
 2. Запускаем dev-server (npm start или yarn start).
 3. Можем использовать любые библиотеки/фреймворки. В предложенной конфигурации: react, date-fns, less, classnames, normalize.css... (детально в package.json).
@@ -9,18 +10,21 @@
 6. Иконки в формате svg можно найти в директории img в корне репозитория.
 
 ## Методы api
+
 * GET, [http://localhost:8080/users/octocat](http://localhost:8080/users/octocat) - получить информацию о пользователе octocat.
 * GET, [http://localhost:8080/users/octocat/repos](http://localhost:8080/users/octocat) - список публичных репозиториев пользователя octocat.
 
 Ответы от сервера будут в формате json, физически они находятся в директории dist: dist/fixtures/users/octocat.json и dist/fixtures/users/octocat/repos.json
 
 ## Интерфейс
+
 1. Форма поиска пользователя по username;
 2. Информация о найденном пользователе;
 3. Список публичных репозиториев пользователя;
 4. Ошибка в случае отсутствия пользователя с таким username.
 
 ### Форма поиска
+
 * Начальное состояние:
 
 ![search-initial](./search-initial.png)
