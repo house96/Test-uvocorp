@@ -12,7 +12,7 @@
 ## Методы api
 
 * GET, [http://localhost:8080/users/octocat](http://localhost:8080/users/octocat) - получить информацию о пользователе octocat.
-* GET, [http://localhost:8080/users/octocat/repos](http://localhost:8080/users/octocat) - список публичных репозиториев пользователя octocat.
+* GET, [http://localhost:8080/users/octocat/repos](http://localhost:8080/users/octocat/repos) - список публичных репозиториев пользователя octocat.
 
 Ответы от сервера будут в формате json, физически они находятся в директории dist: dist/fixtures/users/octocat.json и dist/fixtures/users/octocat/repos.json
 
