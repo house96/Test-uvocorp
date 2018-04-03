@@ -1,6 +1,6 @@
 # Тестовое задание
 
-![screenshot](images/screenshot.png)
+![screenshot](task/images/screenshot.png)
 
 1. Ставим зависимости;
 2. Запускаем dev-server (npm start или yarn start).
