@@ -61,7 +61,6 @@ module.exports = {
         target: 'http://localhost:8080',
         pathRewrite: p => `/fixtures${p}.json`,
         onProxyRes(proxyRes, req, res) {
-
           /**
            * duct tape :(
            */

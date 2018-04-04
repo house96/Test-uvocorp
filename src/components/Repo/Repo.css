@@ -1,0 +1,42 @@
+.repo {
+  display: flex;
+  border-top: 1px solid #DCDCDC;
+  padding: 10px 15px 10px 0;
+  font-size: 14px;
+  list-style: none;
+}
+.repo-idx {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #DCDCDC;
+}
+.repo-heading {
+  display: flex;
+  justify-content: space-between;
+}
+.repo-achievements {
+  display: flex;
+}
+.repo-achievements .icon {
+  padding: 0 10px;
+  display: flex;
+}
+.repo-text {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  line-height: 1.5;
+}
+.repo-time{
+  margin: 0;
+}
+.repo-time--date {
+  padding: 0 10px;
+  font-weight: 600;
+}
+.language {
+  background-color: #808080;
+  color: #fff;
+}

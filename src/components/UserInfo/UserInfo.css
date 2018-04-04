@@ -1,0 +1,66 @@
+.user-not-found {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  color: #808080;
+}
+.userInfo {
+  display: flex;
+  padding: 20px  10px;
+}
+.userInfo-block {
+  display: flex;
+}
+.user-avatar {
+ height: 150px;
+}
+.user-avatar img {
+  height: 100%;
+}
+.user-name {
+  color: black;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+.user-date span {
+  padding-left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+.user-contacts {
+  padding: 0 10px;
+}
+.user-link {
+  font-size: 14px;
+  padding-left: 10px;
+}
+.user-link a {
+  padding: 0 5px;
+}
+.user-location  {
+  color: #000;
+  display: flex;
+}
+.user-achievements {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+.user-achievements-repos {
+  color: #ff4500;
+  text-align: center;
+  padding: 0 10px;
+  font-size: 32px;
+}
+.user-achievements-gist {
+  color: #000;
+  text-align: center;
+  padding: 15px;
+  font-size: 32px;
+}
+.user-achievements-title {
+  display: block;
+  font-size: 12px;
+}

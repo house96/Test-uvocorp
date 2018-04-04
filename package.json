@@ -8,6 +8,7 @@
     "start": "webpack-serve webpack.config.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "date-fns": "^1.29.0",
     "normalize.css": "^8.0.0",
