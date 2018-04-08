@@ -1,15 +1,56 @@
 import React from 'react';
 import { format } from 'date-fns';
 import PropTypes from 'prop-types';
-
-import './Repo.css';
+import styled from 'styled-components';
 
 // SVG
 import star from '../../../img/stars.svg';
 import fork from '../../../img/forks.svg';
 import issues from '../../../img/issues.svg';
 
-const repo = ({
+const RepoBlock = styled.li`
+  display: flex;
+  border-top: 1px solid #DCDCDC;
+  padding: 10px 15px 10px 0;
+  font-size: 14px;
+  list-style: none;
+`;
+const RepoIndex = styled.span` 
+  display: flex;
+  align-items: flex-start;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #DCDCDC;
+`;
+const RepoContent = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  line-height: 1.5;
+`;
+const RepoHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const RepoAchievements = styled.div`
+  display: flex;
+`;
+
+const RepoIcon = styled.div`
+  padding: 0 10px;
+  display: flex;
+  ${props => (props.language ?
+    'background-color: #808080; color: #fff' : null)}
+`;
+const RepoTime = styled.p`
+  margin: 0;
+  span {
+    padding: 0 10px;
+    font-weight: 600;
+  }
+`;
+
+const Repo = ({
   name,
   html_url,
   description,
@@ -21,51 +62,53 @@ const repo = ({
   open_issues_count,
   language,
 }) => {
-  const languageElement = language ? (
-    <div className="language icon">{language}</div>
+  const languageElement = language ? (<RepoIcon language>{language}</RepoIcon>
   ) : null;
+
   const starElement = stargazers_count ? (
-    <div className="star icon"><img src={star} alt="stars" />{stargazers_count}</div>)
+    <RepoIcon><img src={star} alt="stars" />{stargazers_count}</RepoIcon>)
     : null;
+
   const forkElement = forks_count ? (
-    <div className="fork icon"><img src={fork} alt="forks" />{forks_count}</div>)
+    <RepoIcon><img src={fork} alt="forks" />{forks_count}</RepoIcon>)
     : null;
+
   const issuesElement = open_issues_count ? (
-    <div className="issue icon"><img src={issues} alt="issues" />{open_issues_count}</div>)
+    <RepoIcon><img src={issues} alt="issues" />{open_issues_count}</RepoIcon>)
     : null;
 
   return (
-    <li className="repo">
-      <span className="repo-idx">{idx}</span>
-      <div className="repo-text">
-        <div className="repo-heading">
-          <div className="repo-title">
+    <RepoBlock>
+      <RepoIndex>{idx}</RepoIndex>
+      <RepoContent>
+        <RepoHeader>
+          <div>
             <a href={html_url}>{name}</a>
           </div>
-          <div className="repo-achievements">
+          <RepoAchievements>
             {starElement}
             {forkElement}
             {issuesElement}
             {languageElement}
-          </div>
-        </div>
-        <span className="repo-description">{description}</span>
-        <p className="repo-time">
+          </RepoAchievements>
+        </RepoHeader>
+        <span>{description}</span>
+        <RepoTime>
           Created:
-          <span className="repo-time--date">
+          <span>
             {format(created_at, 'DD.MM.YYYY')}
           </span>
           Updated:
-          <span className="repo-time--date">
+          <span>
             {format(updated_at, 'DD.MM.YYYY')}
           </span>
-        </p>
-      </div>
-    </li>
+        </RepoTime>
+      </RepoContent>
+    </RepoBlock>
   );
 };
 
-repo.propTypes = {
+Repo.propTypes = {
   name: PropTypes.string,
   html_url: PropTypes.string,
   description: PropTypes.string,
@@ -77,4 +120,4 @@ repo.propTypes = {
   open_issues_count: PropTypes.number,
   language: PropTypes.string,
 };
-export default repo;
+export default Repo;

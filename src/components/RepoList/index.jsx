@@ -1,24 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import Repo from '../Repo/index';
-import './RepoList.css';
 
-const repoList = ({ isShow, repos }) =>
+const RepoListSection = styled.section`
+  h3 {
+    padding-left: 10px;
+    font-size: 26px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+const RepoList = ({ isShow, repos }) =>
   (isShow ? (
-    <div className="repo-list">
+    <RepoListSection>
       <h3>Repositories</h3>
       <ul>
         {repos.map((repo, i) => <Repo key={repo.id}{...repo} idx={i + 1} />)}
       </ul>
-    </div>
+    </RepoListSection>
   )
     :
     null);
 
-repoList.propTypes = {
+RepoList.propTypes = {
   isShow: PropTypes.bool,
   repos: PropTypes.array,
 };
 
-export default repoList;
+export default RepoList;

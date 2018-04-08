@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import axios from 'axios';
-
 import 'normalize.css';
-import './App.css';
 
 import Header from './Header/index';
 import UserInfo from './UserInfo/index';
@@ -65,10 +63,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header
-          disabled={this._setStateButton}
-          onChange={this._getUserName}
+          stateButton={this._setStateButton}
+          handlerOnChange={this._getUserName}
           value={value}
-          onClick={this._getUserData}
+          handlerOnClick={this._getUserData}
           warn={isInputEmpty && !value}
         />
         <UserInfo

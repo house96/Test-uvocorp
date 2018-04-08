@@ -1,33 +1,55 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Header.css';
+import styled from 'styled-components';
 
-const header = ({
-  onChange, value, onClick, disabled, warn,
+const HeaderWrapper = styled.header`
+  border-bottom: 2px solid #ff4500 ;
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    h1 {
+      color: #808080;
+      font-weight: 300;
+    }
+    form {
+      display: flex;
+      align-items: center;
+    }
+  }
+`;
+const Input = styled.input`
+  padding-left: 10px;
+  outline: none;
+  ${props => props.warn && 'border : 1px solid #ff4500'};
+`;
+
+const Header = ({
+  handlerOnChange, value, handlerOnClick, stateButton, warn,
 }) => (
-  <div className="Header">
-    <div className="Header-content">
-      <h1 className="title">Github user info</h1>
-      <form action="#" className="form" >
-        <input
+  <HeaderWrapper>
+    <div>
+      <h1>Github user info</h1>
+      <form action="#">
+        <Input
           type="text"
           placeholder="Username"
-          onChange={onChange}
+          onChange={handlerOnChange}
           value={value}
-          className={warn ? 'input-warn input' : 'input'}
+          warn={warn}
         />
-        <button onClick={onClick} disabled={disabled()}>Search</button>
+        <button onClick={handlerOnClick} disabled={stateButton()}>Search</button>
       </form>
     </div>
-  </div>
+  </HeaderWrapper>
 );
 
-header.propTypes = {
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  disabled: PropTypes.func,
+Header.propTypes = {
+  handlerOnChange: PropTypes.func,
+  handlerOnClick: PropTypes.func,
+  stateButton: PropTypes.func,
   value: PropTypes.string,
   warn: PropTypes.bool,
 };
 
-export default header;
+export default Header;
